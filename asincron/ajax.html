@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajax</title>
+  </head>
+  <body>
+    <h1>Asyncronous Javascript & XML (AJAX)</h1>
+    <p>
+      Utilitza l'objecte XMLHttpRequest per a comunicar-se asincronament amb els
+      servidors. Pot enviar i rebre informacio amb JSON, XML, HTML i text
+    </p>
+    <p>Metodes nadus:</p>
+    <ol>
+      <li>ActiveXObject (IE8 o inferiors) obsolet</li>
+      <li>XMLHttpRequest</li>
+      <li>API Fetch</li>
+    </ol>
+    <p>Llibreries externes:</p>
+    <ol>
+      <li>JQuery.ajax()</li>
+      <li>Axios</li>
+      <li>...</li>
+    </ol>
+    <p>
+      AJAX no es una tecnologia en si mateixa. En realitat es tracta de varies
+      tecnologies independents que s'uneixen:
+    </p>
+
+    <ol>
+      <li>HTML i CSS, per crear una presentacio basada en estandards</li>
+      <li>DOM, per la interaccio i manipulacio dinamica de la presentacio</li>
+      <li>
+        HTML, XML i JSON, per a l'intercanvi i manipulacio de l'informacio
+      </li>
+      <li>
+        XMLHttpRequest o Fetch, per a l'intercanvi assincron de l'informacio
+      </li>
+      <li>JAVASCRIPT per unir la resta de tecnologies programaticament</li>
+    </ol>
+
+    <p>Estats d'una peticio assincrona</p>
+
+    <ol>
+      <li>READY_STATE_UNINITIALIZED=0</li>
+      <li>READY_STATE_LOADING=1</li>
+      <li>READY_STATE_LOADED=2 (Carregatpero no disponible)</li>
+      <li>READY_STATE_INTERACTIVE=3 (Processant les dades)</li>
+      <li>READY_STATE_COMPLETE=4</li>
+    </ol>
+
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status"
+      >Codis estat http</a
+    >
+    <br /><br />
+    <a href="https://api.github.com/users/ismaelFiguera1">Ismael</a>
+    <br /><br />
+
+    <h2>Objecte XMLHttpRequest</h2>
+
+    <p>Passos per fer una peticio AJAX:</p>
+
+    <ol>
+      <li>instanciar l'objecte XMLHttpRequest</li>
+      <li>
+        Assignar un event (nostre cas: readystatechange). Es un estat generic
+      </li>
+      <li>Obrir la peticio open (GET, POST, HEAD..."endpoint")</li>
+      <li>Enviar la peticio</li>
+    </ol>
+
+    <a href="https://jsonplaceholder.typicode.com/">Free Fake API</a>
+
+    <ol id="xhr"></ol>
+
+    <script src="assets/ajax.js"></script>
+  </body>
+</html>

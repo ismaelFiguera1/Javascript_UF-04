@@ -1,3 +1,4 @@
+/*
 new Promise((resolve) => resolve([1, 2, 3])).then((resul) =>
   console.log(resul)
 );
@@ -18,9 +19,9 @@ dividir(6, 3)
   .catch((err) => {
     console.log(err); // es el mateix que err.stack
   });
-
+*/
 /* Cuan creem l'objecte new error obtenim : name, stack, message */
-
+/*
 function acces(edat) {
   return new Promise((resolve, reject) => {
     if (edat >= 18) resolve("Acces");
@@ -33,3 +34,53 @@ acces(18)
   .catch((err) =>
     console.log(`Edat: ${err.edat}, linia codi error ${err.lininiaCodi}`)
   );
+*/
+/*
+  Es una funcio normal que rep parametres, i retorna un promise, la promesa te un arrow function que te 2 valors, resolve o reject
+  */
+
+function suma(a, b) {
+  return new Promise((rsl, rej) => {
+    let c = a + b;
+    if (c < 0) {
+      rej(
+        new Error(
+          `El resultat no pot ser mes petit que 0 i el resultat es ${c}`
+        )
+      );
+    } else rsl(c);
+  });
+}
+/*
+suma(12, 16)
+  .then((rtat) => {
+    console.log(rtat);
+    return suma(5, 1);
+  })
+  .then((rtat) => {
+    alert(rtat);
+    return suma(-50, 52);
+  })
+  .then((rtat) => console.log(rtat))
+  .catch((err) => console.log(err));
+*/
+console.log("*********Async/Await*********");
+
+// Async/Await
+
+async function unaFuncioDeclarada() {
+  try {
+    let obj = await suma(10, 10);
+    alert(obj);
+
+    obj = await suma(1000, 10);
+    console.log(obj);
+
+    obj = await suma(-100, 10);
+    console.log(obj);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+unaFuncioDeclarada();
