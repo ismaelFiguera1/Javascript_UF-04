@@ -12,7 +12,13 @@
       let json = JSON.parse(xhr.responseText);
       json.forEach((e) => {
         const $li = document.createElement("li");
-        $li.innerHTML = `${e.id} -- ${e.name} -- ${e.username} -- ${e.email}`;
+
+        const adres = String(e.address); // aixo esta malament, es te que convertir a string
+
+        console.log(adres);
+
+        $li.innerHTML = `${e.id} -- ${e.name} -- ${e.username} -- ${e.email} -- ${e.username} --
+        ${adres}`;
         $fragment.appendChild($li);
       });
       $xhr.appendChild($fragment);
@@ -22,7 +28,7 @@
     }
   });
   // tercer pas
-  xhr.open("GET", "https://jsonplaceholder.typicode.com/use");
+  xhr.open("GET", "assets/users.json");
   // quart pas
   xhr.send();
 })(); /* Aixo en una funcio autoexecutable */

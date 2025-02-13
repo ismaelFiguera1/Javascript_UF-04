@@ -68,15 +68,17 @@ console.log("*********Async/Await*********");
 
 // Async/Await
 
+// Funcio Declarada
+
 async function unaFuncioDeclarada() {
   try {
     let obj = await suma(10, 10);
     alert(obj);
 
-    obj = await suma(1000, 10);
+    obj = await suma(500, 10);
     console.log(obj);
 
-    obj = await suma(-100, 10);
+    obj = await suma(30, 10);
     console.log(obj);
   } catch (err) {
     console.error(err);
@@ -84,3 +86,23 @@ async function unaFuncioDeclarada() {
 }
 
 unaFuncioDeclarada();
+
+// Funcio Expressada
+
+const funcioExpressada = async () => {
+  try {
+    let obj = await suma(10, 10);
+    alert(`${obj} desde una funcio expressada`);
+    console.log("Funcio expressada");
+
+    obj = await suma(1000, 10);
+    console.log(obj);
+
+    obj = await suma(100, 10);
+    console.log(obj);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+funcioExpressada();
