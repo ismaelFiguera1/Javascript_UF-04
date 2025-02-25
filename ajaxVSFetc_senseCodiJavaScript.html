@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AJAX vs Promises</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f2f5;
+      }
+      h2 {
+        margin-bottom: 20px;
+      }
+      #quote {
+        margin: 20px 0;
+        padding: 20px;
+        border: 2px solid #007bff;
+        border-radius: 10px;
+        background-color: #ffffff;
+        text-align: center;
+        min-height: 60px;
+      }
+      button {
+        margin: 10px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+        color: white;
+        transition: background 0.3s;
+      }
+      #ajaxBtn {
+        background-color: #28a745;
+      }
+      #ajaxBtn:hover {
+        background-color: #218838;
+      }
+      #promiseBtn {
+        background-color: #007bff;
+      }
+      #promiseBtn:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Frases aleatòries amb AJAX i Promises</h2>
+    <div id="quote">Fes clic en un botó per obtenir una cita!</div>
+    <button id="ajaxBtn">Obtenir cita (AJAX)</button>
+    <button id="promiseBtn">Obtenir cita (Promise)</button>
+    <script src="exercici.js"></script>
+  </body>
+</html>
