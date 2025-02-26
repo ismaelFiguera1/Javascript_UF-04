@@ -3,7 +3,6 @@ import STRIPEKEYS from "./stripeKeys.js";
 
 const d = document;
 
-const $figure = d.querySelector(".moneda-figure");
 const $template = d.querySelector("#monedes-template").content;
 const $fragment = d.createDocumentFragment(),
   $section = d.querySelector(".monedes");
@@ -12,6 +11,10 @@ const fetchOptions = {
   headers: {
     Authorization: `Bearer ${STRIPEKEYS.private}`,
   },
+};
+
+const moneyFormat = (num) => {
+  return `${num.slice(0, -2)}, ${num.slice(-2)} €`;
 };
 
 Promise.all([
@@ -23,14 +26,22 @@ Promise.all([
     let products = json[0].data;
     let prices = json[1].data;
     //console.log(products, prices);
+    console.log(products);
+    console.log(prices);
+
     prices.forEach((element) => {
       let productData = products.filter(
         (product) => product.id === element.product
       );
-      //console.log(productData);
+      console.log(productData);
       $template
         .querySelector(".moneda-figure")
         .setAttribute("data-price", element.id);
+      $template.querySelector("img").src = productData[0].images[0];
+      $template.querySelector("img").setAttribute("alt", productData[0].name);
+      $template.querySelector("figcaption").innerHTML = `<span>${
+        productData[0].name
+      }</span><br /><span>${moneyFormat(element.unit_amount_decimal)}</span>`;
       let $clone = d.importNode($template, true);
       $fragment.appendChild($clone);
     });
