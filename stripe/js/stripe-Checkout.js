@@ -1,11 +1,17 @@
 //  https://docs.stripe.com/js
 import STRIPEKEYS from "./stripeKeys.js";
 
+/*
+
+    Farem c
+
+*/
+
 const d = document;
 
 const $template = d.querySelector("#monedes-template").content;
 const $fragment = d.createDocumentFragment(),
-  $section = d.querySelector(".monedes");
+  $section = d.querySelector(".monedes-section");
 
 const fetchOptions = {
   headers: {
@@ -52,6 +58,35 @@ Promise.all([
     $section.innerHTML = `<div class="errorConexio">Error ${err.status} ${message}</div>`;
     console.log(err);
   });
+
+/*
+
+CODI checkout-single-subscription
+
+*/
+
+d.addEventListener("click", (e) => {
+  console.log(e.target);
+
+  if (e.target.matches(".moneda-figure *")) {
+    //alert("error ..");
+    let price = e.target.parentElement.getAttribute("data-price");
+    console.log(price);
+    Stripe(STRIPEKEYS.public)
+      .redirectToCheckout({
+        lineItems: [{ price, quantity: 1 }],
+        mode: "payment",
+        successUrl: "http://127.0.0.1:5500/stripe/success.html",
+        cancelUrl: "http://127.0.0.1:5500/stripe/cancel.html",
+      })
+      .then((res) => {
+        console.log(res);
+        if (res.error) {
+          $section.insertAdjacentHTML("beforeend", res.error.message);
+        }
+      });
+  }
+});
 
 /*
 fetch("https://api.stripe.com/v1/products", {
