@@ -29,6 +29,9 @@ Promise.all([
 ])
   .then((respostes) => Promise.all(respostes.map((res) => res.json())))
   .then((json) => {
+
+    console.log(json);
+    
     let products = json[0].data;
     let prices = json[1].data;
     //console.log(products, prices);

@@ -1,0 +1,42 @@
+html {
+    box-sizing: border-box;
+    font-family: 'Calibri';
+    margin: 0;
+}
+
+*,
+*:before,
+*:after{
+    box-sizing: inherit;
+    font-family: inherit;
+    margin: inherit;
+}
+
+html, body {
+    height: 100vh;
+}
+
+header, footer{
+    height: 15%;
+    background-color: aquamarine;
+}
+
+main{
+    height: 70%;
+    overflow: auto;
+}
+
+.llista-caracters div{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+img {
+    height: 200px;
+    width: 200px;
+}
+
+h1 {
+    padding: 20px;
+    text-align: center;
+}
