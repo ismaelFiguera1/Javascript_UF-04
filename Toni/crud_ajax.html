@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD API REST AJAX</title>
+  </head>
+  <body>
+    <h1>CRUD API REST AJAX</h1>
+    <section class="crud">
+      <article><h2 class="crud-title">Afegir monedes</h2></article>
+      <form class="crud-form">
+        <input
+          type="text"
+          name="poblacio"
+          placeholder="intro poblacio"
+          required
+        />
+        <br />
+        <input type="text" name="epoca" placeholder="intro epoca" required />
+        <br />
+        <input type="submit" value="Enviar" />
+        <!--quan enviem les dades enviarem l'acció a fer al hidden-->
+        <input type="hidden" name="ide" />
+      </form>
+      <article>
+        <h2>Veure monedes</h2>
+        <table class="crud-table">
+          <thead>
+            <tr>
+              <th>poblacio</th>
+              <th>Epoca</th>
+              <th>Accions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </article>
+    </section>
+    <template id="crud-template">
+      <tr>
+        <td class="poblacio"></td>
+        <td class="epoca"></td>
+        <td>
+          <button class="edit">Editar</button>
+          <button class="delete">Esborrar</button>
+        </td>
+      </tr>
+    </template>
+    <script src="js/crud-ajax.js"></script>
+  </body>
+</html>
