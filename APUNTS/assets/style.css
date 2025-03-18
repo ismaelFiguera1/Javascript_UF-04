@@ -1,0 +1,57 @@
+html {
+  font-family: sans-serif;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+*,
+::after,
+::before {
+  font-family: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+}
+
+body > header,
+body > footer {
+  height: 10%;
+  border-radius: 30px;
+  background-color: rgb(5, 15, 58);
+  color: white;
+}
+
+body > header {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+body > footer {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+main {
+  height: 80vh;
+  background-color: white;
+  overflow: scroll;
+  flex-direction: row;
+}
+
+body > header *,
+body > footer * {
+  color: white;
+  margin: 0;
+}
+
+header {
+  text-align: center;
+}
+
+main > div {
+  width: 75%;
+  margin: auto;
+}
