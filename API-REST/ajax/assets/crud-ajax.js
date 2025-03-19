@@ -57,8 +57,6 @@ const getTotesMarques = () => {
 d.addEventListener("DOMContentLoaded", getTotesMarques);
 
 d.addEventListener("click", (e) => {
-  console.log("event click");
-
   if (e.target.matches(".edit")) {
     //    alert("edit");
 
@@ -67,41 +65,22 @@ d.addEventListener("click", (e) => {
     $form.madeIn.value = e.target.dataset.madeIn;
     $form.ide.value = e.target.dataset.id;
   } else if (e.target.matches(".delete")) {
-    $titol.textContent = "Eliminar Marca cotxes";
-  }
-});
-
-const $esborrar = d.querySelector(".delete");
-
-d.addEventListener("click", (e) => {
-  console.log(e);
-  console.log($esborrar);
-  if (e.target === $form) {
-    console.log("form");
-
-    // Mirar si l'imput hidden te value
-    if (e.target.ide.value) {
-      // Actualitzaco
-      ajax({
-        url: `http://localhost:3000/MarquesCotxes/${e.target.ide.value}`,
-        method: "PUT",
-        success: () => location.reload(),
-        error: (err) => {
-          console.log(err);
-          $table.insertAdjacentHTML("afterend", `<p>${err}</p>`);
-        },
-        data: {},
-      });
-    } else {
-      // Alta
-    }
+    console.log(`Eliminant cotxe ${e.target.dataset.id}`);
+    ajax({
+      url: `http://localhost:3000/MarquesCotxes/${e.target.dataset.id}`,
+      method: "DELETE",
+      success: () => location.reload(),
+      error: (err) => {
+        console.log(err);
+        $table.insertAdjacentHTML("afterend", `<p>${err}</p>`);
+      },
+    });
   }
 });
 
 document.addEventListener("submit", (e) => {
   e.preventDefault();
-
-  console.log(e);
+  console.log("submit");
 
   if (e.target === $form) {
     console.log("form");
@@ -109,6 +88,8 @@ document.addEventListener("submit", (e) => {
     // Mirar si l'imput hidden te value
     if (e.target.ide.value) {
       // Actualitzaco
+      console.log("Editar");
+
       ajax({
         url: `http://localhost:3000/MarquesCotxes/${e.target.ide.value}`,
         method: "PUT",
@@ -123,7 +104,20 @@ document.addEventListener("submit", (e) => {
         },
       });
     } else {
-      // Alta
+      console.log("Alta");
+      ajax({
+        url: `http://localhost:3000/MarquesCotxes/${e.target.ide.value}`,
+        method: "PUT",
+        success: () => location.reload(),
+        error: (err) => {
+          console.log(err);
+          $table.insertAdjacentHTML("afterend", `<p>${err}</p>`);
+        },
+        data: {
+          marca: e.target.marca.value,
+          madeIn: e.target.madeIn.value,
+        },
+      });
     }
   }
 });

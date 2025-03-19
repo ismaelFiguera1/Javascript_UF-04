@@ -1,0 +1,46 @@
+{
+  "MarquesCotxes": [
+    {
+      "marca": "Mazda",
+      "madeIn": "Japan",
+      "id": "4"
+    },
+    {
+      "id": "5",
+      "marca": "Ford",
+      "madeIn": "EEUU"
+    },
+    {
+      "marca": "Renau",
+      "madeIn": "France",
+      "id": "6"
+    }
+  ],
+  "Ciutats": [
+    {
+      "id": "1",
+      "nom": "Barcelona",
+      "habitants": 35060
+    },
+    {
+      "id": "2",
+      "nom": "Madrid",
+      "habitants": 40000
+    },
+    {
+      "id": "3",
+      "nom": "Burgos",
+      "habitants": 20563
+    },
+    {
+      "id": "5",
+      "nom": "Rome",
+      "habitants": 65000
+    },
+    {
+      "id": "4",
+      "nom": "Paris",
+      "habitants": 50000
+    }
+  ]
+}
