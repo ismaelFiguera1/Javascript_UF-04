@@ -1,0 +1,36 @@
+{
+  "monedes": [
+    {
+      "poblacio": "La Ràpita",
+      "epoca": "ibèrica",
+      "id": "6128"
+    },
+    {
+      "poblacio": "La Ràpita",
+      "epoca": "ibèrica",
+      "id": "61d28"
+    },
+    {
+      "poblacio": "La Ràpita",
+      "epoca": "ibèrica",
+      "id": "61s28"
+    }
+  ],
+  "medalles": [
+    {
+      "id": "1",
+      "motiu": "Montserrat",
+      "forma": "ovalada"
+    },
+    {
+      "id": "2",
+      "motiu": "Sant Magí",
+      "forma": "quadrada"
+    },
+    {
+      "id": "3",
+      "motiu": "Sant Llorenç",
+      "forma": "rodona"
+    }
+  ]
+}

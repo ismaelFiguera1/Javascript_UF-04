@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD API REST AXIOS</title>
+  </head>
+  <body>
+    <h1>CRUD API REST AXIOS</h1>
+    <section class="crud">
+      <article>
+        <h2 class="crud-title">Afegir monedes</h2>
+        <form class="crud-form">
+          <input
+            type="text"
+            name="poblacio"
+            placeholder="intro població"
+            required
+          />
+          <br />
+          <input type="text" name="epoca" placeholder="intro epoca" required />
+          <br />
+          <input type="submit" value="Enviar" />
+          <!--quan enviem les dades enviarem l'acció a fer oculta-->
+          <input type="hidden" name="ide" />
+
+          <article>
+            <h2>Veure monedes</h2>
+            <table class="crud-table">
+              <thead>
+                <tr>
+                  <th>Població</th>
+                  <th>Epoca</th>
+                  <th>Accions</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </article>
+        </form>
+      </article>
+    </section>
+    <template class="crud-template">
+      <tr>
+        <td class="poblacio"></td>
+        <td class="epoca"></td>
+        <td>
+          <!--button va amb l'event submit automàticament, si fem type="button" va amb l'event "click"-->
+          <button type="button" class="edit">Editar</button>
+          <button type="button" class="delete">Esborrar</button>
+        </td>
+      </tr>
+    </template>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/crud-axios.js"></script>
+  </body>
+</html>
