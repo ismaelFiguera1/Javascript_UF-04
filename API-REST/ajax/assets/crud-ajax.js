@@ -23,7 +23,7 @@ const ajax = (options) => {
   });
   xhr.open(method || "GET", url);
   // informar que les dades estaran en format UTF-8  que es una aplicacio JSON
-  xhr.setRequestHeader("content-type", "applicaton/json;charset=utf-8");
+  xhr.setRequestHeader("Content-Type", "applicaton/json;charset=utf-8");
   xhr.send(JSON.stringify(data));
 };
 
@@ -104,18 +104,22 @@ document.addEventListener("submit", (e) => {
         },
       });
     } else {
-      console.log("Alta");
+      console.log(e.target.marca.value);
+      console.log(e.target.madeIn.value);
       ajax({
-        url: `http://localhost:3000/MarquesCotxes/${e.target.ide.value}`,
-        method: "PUT",
-        success: () => location.reload(),
+        url: `http://localhost:3000/Ciutats`,
+        method: "POST",
+        succes: () => location.reload(),
         error: (err) => {
           console.log(err);
-          $table.insertAdjacentHTML("afterend", `<p>${err}</p>`);
+          $table.insertAdjacentHTML(
+            "afterend",
+            `<p><mark><b>${err}</b><mark></p>`
+          );
         },
         data: {
-          marca: e.target.marca.value,
-          madeIn: e.target.madeIn.value,
+          nom: e.target.marca.value,
+          habitants: e.target.madeIn.value,
         },
       });
     }

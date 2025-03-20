@@ -1,0 +1,16 @@
+html{
+    box-sizing: border-box;
+}
+
+*,::after,::before{
+    box-sizing: inherit;
+}
+
+ table{
+    border: thin solid black;
+}
+
+ table td{
+    padding: 6px;
+    border: thin solid black;
+}

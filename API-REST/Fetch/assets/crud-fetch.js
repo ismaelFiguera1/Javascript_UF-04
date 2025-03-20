@@ -1,108 +1,55 @@
-const d = document;
-const $table = d.querySelector(".crud-table"),
-  $titol = d.querySelector(".crud-title");
-const $form = d.querySelector(".crud-form"),
-  $template = d.querySelector(".crud-template").content;
-const $fragment = d.createDocumentFragment();
+const d = document,
+  $body = d.querySelector("body"),
+  $form = d.querySelector("form");
 
-const getTotesMarques = async () => {
+const getCotxes = async () => {
+  let res = await fetch("http://localhost:3000/MarquesCotxes");
+  let marquesJSON = await res.json();
+  let $taula = d.createElement("table");
+  let $encabezat = `  <tr>
+    <th>marca</th>
+    <th>madeIn</th>
+    <th>id</th>
+  </tr>`;
+  $taula.insertAdjacentHTML("afterbegin", $encabezat);
+  $body.insertAdjacentElement("beforeend", $taula);
+  let $fragment = document.createDocumentFragment();
+  marquesJSON.forEach((element) => {
+    console.log(element);
+    let $tr = document.createElement("tr");
+    let $linea = `<td>${element.marca}</td><td>${element.madeIn}</td><td>${element.id}</td>        <td>
+          <button type="button" class="edit ${element.id}" marca="${element.marca}" madeIn="${element.madeIn}">editar</button>
+          <button type="button" class="delete">esborrar</button>
+        </td>`;
+    $tr.innerHTML = $linea;
+    $fragment.appendChild($tr);
+  });
+  console.log($fragment);
+  $taula.querySelector("tbody").appendChild($fragment);
+  $taula.classList.add("marques");
+  console.log($taula);
+};
+
+d.addEventListener("DOMContentLoaded", getCotxes());
+
+const editarMarques = async (e) => {
   try {
     let res = await fetch("http://localhost:3000/MarquesCotxes");
-    if (!res.ok) {
-      throw { status: res.status, statusText: res.statusText };
-    }
-    let json = await res.json();
-    console.log(json);
+    let marquesJSON = await res.json();
+    console.log($form);
+    console.log(e.target);
 
-    json.forEach((element) => {
-      $template.querySelector(".marca").textContent = element.marca;
-      $template.querySelector(".pais").textContent = element.madeIn;
-      $template.querySelector(".edit").dataset.marca = element.marca;
-      $template.querySelector(".edit").dataset.madeIn = element.madeIn;
-      $template.querySelector(".edit").dataset.id = element.id;
-      $template.querySelector(".delete").dataset.id = element.id;
-      let $clone = d.importNode($template, true);
-      $fragment.appendChild($clone);
-    });
-
-    $table.querySelector("tbody").appendChild($fragment);
-
-    document.addEventListener("submit", async (e) => {
-      e.preventDefault();
-
-      console.log(e.target.ide.value);
-
-      if (e.target === $form) {
-        // Mirar si l'imput hidden te value
-        if (e.target.ide.value) {
-          // Actualitzaco
-
-          try {
-            let options = {
-              method: "PUT",
-              header: { "content-type": "applicaton/json;charset=utf-8" },
-            };
-            body: json.stringify({
-              marca: e.target.marca.value,
-              madeIn: e.target.madeIn.value,
-            });
-            let resultat = await fetch(
-              `http://localhost:3000/MarquesCotxes/${e.target.ide.value}`,
-              options
-            );
-            if (!res.ok) {
-              throw { status: res.status, statusText: res.statusText };
-            }
-            location.reload();
-          } catch (error) {
-            let message = error.statusText || "S'ha produit un error";
-            $table.insertAdjacentHTML(
-              "afterend",
-              `<p><b>${error.status}:${message}</b></p>`
-            );
-          }
-        } else {
-          try {
-            let options = {
-              method: "POST",
-              header: { "content-type": "applicaton/json;charset=utf-8" },
-            };
-            body: json.stringify({
-              marca: e.target.marca.value,
-              madeIn: e.target.madeIn.value,
-            });
-            let resultat = await fetch(
-              `http://localhost:3000/MarquesCotxes/`,
-              options
-            );
-            if (!res.ok) {
-              throw { status: res.status, statusText: res.statusText };
-            }
-            location.reload();
-          } catch (error) {
-            let message = error.statusText || "S'ha produit un error";
-            $table.insertAdjacentHTML(
-              "afterend",
-              `<p><b>${error.status}:${message}</b></p>`
-            );
-          }
-        }
-      }
-    });
-
-    d.addEventListener("click", async (e) => {
-      console.log(e);
-      console.log(e.target.ide.value);
-      if (e.target.ide.value) {
-      }
-    });
+    $form.marca.value = e.target.dataset.marca;
   } catch (error) {
-    let message = error.statusText || "S'ha produit un error";
-    $table.insertAdjacentHTML(
-      "afterend",
-      `<p><b>${error.status}:${message}</b></p>`
-    );
+    console.error("error editar marques");
   }
 };
 
-d.addEventListener("DOMContentLoaded", getTotesMarques);
+d.addEventListener("click", (e) => {
+  if (e.target.matches(".edit")) {
+    console.log("editar");
+    editarMarques(e);
+  } else if (e.target.matches(".delete")) {
+    console.log("esborrar");
+  }
+});

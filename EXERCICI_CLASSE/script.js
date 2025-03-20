@@ -1,32 +1,34 @@
-const $boto = document.querySelector("button"), d = document, $template = d.querySelector(".taulaDades"), $body=d.querySelector("body"), 
-$taula=$template.content.querySelector("table"), $div=d.querySelector(".taula"), $fragment=d.createDocumentFragment();
+const $boto = document.querySelector(".boto-posts"),
+  d = document,
+  $template = d.querySelector(".taulaDades"),
+  $body = d.querySelector("body"),
+  $taula = $template.content.querySelector("table"),
+  $div = d.querySelector(".taula"),
+  $fragment = d.createDocumentFragment(),
+  $botoUsers = d.querySelector(".boto-users");
 
 let headers = {
   "content-type": "application/json;charset=utf-8",
 };
 
-const getUsers =  async ()=>{
+const getPosts = async () => {
   try {
-    const usersBrut = await axios.get("https://jsonplaceholder.typicode.com/posts", headers), usersJSON = await usersBrut.data;
-    console.log(usersBrut);
-    console.log(usersJSON);
+    const postBrut = await axios.get(
+        "https://jsonplaceholder.typicode.com/posts",
+        headers
+      ),
+      postJSON = await postBrut.data;
 
     $div.appendChild($taula);
-    usersJSON.forEach(element => {
+    postJSON.forEach((element) => {
       let $tr = document.createElement("tr");
-      $tr.innerHTML = `<td>${element.userId}</td><td>${element.id}</td><td>${element.title}</td><td>${element.body}</td>`; 
+      $tr.innerHTML = `<td>${element.userId}</td><td>${element.id}</td><td>${element.title}</td><td>${element.body}</td>`;
       $fragment.appendChild($tr);
-
     });
 
     console.log($fragment);
 
     $div.querySelector("tbody").appendChild($fragment);
-
-    console.log(a);
-    
-    
-
   } catch (error) {
     let message = error.statusText || "S'ha produit un error";
     $body.insertAdjacentHTML(
@@ -34,22 +36,57 @@ const getUsers =  async ()=>{
       `<p><b>${error.status}:${message}</b></p>`
     );
   }
+};
 
-}
+const getUsers = async () => {
+  try {
+    const usersBrut = await axios.get(
+      "https://jsonplaceholder.typicode.com/users"
+    );
+    console.log(usersBrut);
+    const $div = d.createElement("div"),
+      $taulaUsers = d.createElement("table"),
+      $encabezaments = `        <tr>
+          <th>id</th>
+          <th>name</th>
+          <th>username</th>
+          <th>email</th>
+        </tr>`,
+      $fragment = document.createDocumentFragment();
+    $div.classList.add("users");
+    $taulaUsers.insertAdjacentHTML("afterbegin", $encabezaments);
 
-d.addEventListener("DOMContentLoaded", getUsers);
+    usersBrut.data.forEach((element) => {
+      console.log(element);
+      let $fila = `      
+        <td>${element.id}</td>
+        <td>${element.name}</td>
+        <td>${element.username}</td>
+        <td>${element.email}</td>
+      `;
+      let $tr = document.createElement("tr");
+      $tr.innerHTML = $fila;
+      $fragment.appendChild($tr);
+    });
+    console.log($fragment);
+    $taulaUsers.querySelector("tbody").appendChild($fragment);
+    $div.appendChild($taulaUsers);
+    console.log($div);
+    $body.insertAdjacentElement("afterbegin", $div);
+  } catch (error) {
+    let message = error.statusText || "S'ha produit un error";
+    $body.insertAdjacentHTML(
+      "beforeend",
+      `<p><b>${error.status}:${message}</b></p>`
+    );
+  }
+};
 
-d.addEventListener("click",(e)=>{
-  console.log(e.target);
-    if (e.target == $boto) {
-      console.log("boto - dades");
-      console.log($template);
-      $div.appendChild($taula);
-      usersJSON.forEach(element => {
-        let $linea = `<tr><td>${element.userId}</td><td>${element.id}</td><td>${element.title}</td><td>${element.body}</td></tr>`
-        $fragment.appendChild($linea);
-      });
-      console.log($fragment);
-      
-    }
-  })
+d.addEventListener("click", (e) => {
+  if (e.target === $boto) {
+    getPosts();
+  } else if (e.target === $botoUsers) {
+    console.log("Users");
+    getUsers();
+  }
+});

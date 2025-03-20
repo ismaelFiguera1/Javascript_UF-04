@@ -1,0 +1,46 @@
+{
+  "monedes": [
+    {
+      "poblacio": "Agramunt",
+      "epoca": "modernaa",
+      "id": "4"
+    },
+    {
+      "id": "5",
+      "poblacio": "Balaguer-Almatà",
+      "epoca": "baix medieval"
+    },
+    {
+      "id": "dbfb",
+      "poblacio": "Lleida",
+      "epoca": "medieval"
+    },
+    {
+      "id": "7575",
+      "poblacio": "Balaguer",
+      "epoca": "medieval"
+    },
+    {
+      "id": "0487",
+      "poblacio": "test",
+      "epoca": "moderna"
+    }
+  ],
+  "medalles": [
+    {
+      "id": "1",
+      "motiu": "Montserrat",
+      "forma": "ovalada"
+    },
+    {
+      "id": "2",
+      "motiu": "Sant Magí",
+      "forma": "quadrada"
+    },
+    {
+      "id": "3",
+      "motiu": "Sant Llorenç",
+      "forma": "rodona"
+    }
+  ]
+}
