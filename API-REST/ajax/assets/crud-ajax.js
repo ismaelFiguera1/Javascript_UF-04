@@ -84,7 +84,8 @@ document.addEventListener("submit", (e) => {
 
   if (e.target === $form) {
     console.log("form");
-
+    console.log(e.target);
+    
     // Mirar si l'imput hidden te value
     if (e.target.ide.value) {
       // Actualitzaco
@@ -107,7 +108,7 @@ document.addEventListener("submit", (e) => {
       console.log(e.target.marca.value);
       console.log(e.target.madeIn.value);
       ajax({
-        url: `http://localhost:3000/Ciutats`,
+        url: `http://localhost:3000/MarquesCotxes/`,
         method: "POST",
         succes: () => location.reload(),
         error: (err) => {
@@ -118,8 +119,8 @@ document.addEventListener("submit", (e) => {
           );
         },
         data: {
-          nom: e.target.marca.value,
-          habitants: e.target.madeIn.value,
+          marca: e.target.marca.value,
+          madeIn: e.target.madeIn.value,
         },
       });
     }
