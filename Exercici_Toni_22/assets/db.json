@@ -1,14 +1,17 @@
 {
   "categories": [
     {
-      "nom": "Electrònzca",
-      "productes": "1,2,3",
-      "id": "1"
+      "id": "1",
+      "nom": "Electrònica",
+      "productes": [
+        1,
+        2
+      ]
     },
     {
-      "nom": "Electrònica",
-      "productes": "1,3",
-      "id": "3"
+      "nom": "Roba",
+      "productes": "3",
+      "id": "2"
     }
   ],
   "productes": [

@@ -43,17 +43,11 @@ d.addEventListener("DOMContentLoaded", async () => {
 
 d.addEventListener("click", async (e) => {
   if (e.target.matches(".edit")) {
-    console.log(e);
-
-    console.log("editar");
-    console.log($form);
     $form.nom.value = e.target.dataset.nom;
     $form.producte.value = e.target.dataset.pro;
     $form.ocult.value = e.target.dataset.id;
   } else if (e.target.matches(".Borrar")) {
-    console.log(e.target.dataset.id);
     let id = e.target.dataset.id;
-    console.log(id);
 
     try {
       let options = {
@@ -75,10 +69,8 @@ d.addEventListener("click", async (e) => {
 
 d.addEventListener("submit", async (e) => {
   e.preventDefault();
-  console.log(e.target);
 
-  if (e.target.matches("form")) {
-    console.log("categories");
+  if (e.target.matches(".crud-categories")) {
     if (e.target.ocult.value) {
       try {
         let data = {
@@ -101,7 +93,45 @@ d.addEventListener("submit", async (e) => {
         }
         location.reload();
       } catch (error) {
-        console.log(error);
+        let message = error.statusText || "Error al editar";
+        $body.insertAdjacentHTML(
+          "beforeend",
+          `<p><b>${error.status}:${message}</b></p>`
+        );
+      }
+    }else{
+      console.log("Alta");
+      try {
+        console.log(e.target);
+        
+        
+        let data = {
+          nom: e.target.nom.value,
+          productes: e.target.producte.value,
+        };
+        let options = {
+          method: "POST",
+          headers: {
+            "content-type": "application/json;charse=utf-8",
+          },
+          body: JSON.stringify(data),
+        };
+        let res = await fetch(`http://localhost:3000/categories`, options);
+        if (!res.ok) {
+          throw { status: res.status, statusText: res.statusText };
+        }
+        location.reload();
+
+
+
+
+
+      } catch (error) {
+        let message = error.statusText || "Error al d'onar d'alta";
+        $body.insertAdjacentHTML(
+          "beforeend",
+          `<p><b>${error.status}:${message}</b></p>`
+        );
       }
     }
   }
