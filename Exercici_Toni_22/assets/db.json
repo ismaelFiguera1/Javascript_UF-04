@@ -1,0 +1,31 @@
+{
+  "categories": [
+    {
+      "nom": "Electrònzca",
+      "productes": "1,2,3",
+      "id": "1"
+    },
+    {
+      "nom": "Electrònica",
+      "productes": "1,3",
+      "id": "3"
+    }
+  ],
+  "productes": [
+    {
+      "id": 1,
+      "nom": "Telèfon",
+      "preu": 300
+    },
+    {
+      "id": 2,
+      "nom": "Portàtil",
+      "preu": 1000
+    },
+    {
+      "id": 3,
+      "nom": "Samarreta",
+      "preu": 20
+    }
+  ]
+}

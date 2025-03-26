@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form class="crud-categories">
+            <input
+            type="text"
+            name="nom"
+            placeholder="Intro nom"
+            required="required"
+          />
+          <br />
+          <input
+            type="text"
+            name="producte"
+            placeholder="intro producte"
+            required="required"
+          />
+          <input type="hidden" name="ocult">
+          <input type="submit" value="Enviar" class="altaCat" />
+        </form>
+    </div>
+    <div>
+        <h3>Taula categories</h3>
+        <table class="taula_categories">
+            <tr>
+                <th>id</th>
+                <th>nom</th>
+                <th>productes</th>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <h3>Taula productes</h3>
+        <table class="taula_productes">
+            <tr>
+                <th>id</th>
+                <th>nom</th>
+                <th>preu</th>
+            </tr>
+        </table>
+    </div>
+    <script src="assets/script.js"></script>
+</body>
+</html>
