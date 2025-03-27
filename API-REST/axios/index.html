@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <form>
-        <input type="text" name="nom" required>
-        <input type="text" name="habitants" required>
-        <input type="hidden" name="id">
-        <button type="submit">Enviar</button>
+      <input type="text" name="nom" placeholder="Nom" required />
+      <input type="number" name="habitants" placeholder="Habitants" required />
+      <input type="hidden" name="id" />
+      <button type="submit">Enviar</button>
     </form>
-    <template>
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>CIUTAT</th>
-                <th>HABITANTS</th>
-            </tr>
-        </table>
-    </template>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>CIUTAT</th>
+        <th>HABITANTS</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="assets/script.js"></script>
-</body>
+  </body>
 </html>

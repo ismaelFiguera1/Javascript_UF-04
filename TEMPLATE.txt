@@ -1,0 +1,86 @@
+<template id="ciutat-template">
+  <tr>
+    <td class="id"></td>
+    <td class="nom"></td>
+    <td class="habitants"></td>
+  </tr>
+</template>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Habitants</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+
+
+const dades = [
+  { id: 1, nom: "Barcelona", habitants: 1600000 },
+  { id: 2, nom: "Girona", habitants: 98000 },
+];
+
+const $template = document.getElementById("ciutat-template");
+const $tbody = document.querySelector("tbody");
+const $fragment = document.createDocumentFragment();
+
+dades.forEach((ciutat) => {
+  const clone = $template.content.cloneNode(true);
+  clone.querySelector(".id").textContent = ciutat.id;
+  clone.querySelector(".nom").textContent = ciutat.nom;
+  clone.querySelector(".habitants").textContent = ciutat.habitants;
+
+  $fragment.appendChild(clone);
+});
+
+$tbody.appendChild($fragment);
+
+
+
+
+
+
+const getCiutats = async () => {
+  try {
+    let res = await axios.get("http://localhost:3000/Ciutats");
+    let json = res.data;
+
+    const $fragment = document.createDocumentFragment();
+    const $template = document.getElementById("ciutat-template");
+
+    json.forEach((element) => {
+      const clone = $template.content.cloneNode(true);
+
+      // Omplim les dades
+      clone.querySelector(".id").textContent = element.id;
+      clone.querySelector(".nom").textContent = element.nom;
+      clone.querySelector(".habitants").textContent = element.habitants;
+
+      // Afegim data-* als botons
+      const $btnEdit = clone.querySelector(".edit");
+      const $btnDelete = clone.querySelector(".delete");
+
+      $btnEdit.dataset.id = element.id;
+      $btnEdit.dataset.nom = element.nom;
+      $btnEdit.dataset.habitants = element.habitants;
+
+      $btnDelete.dataset.id = element.id;
+
+      // Afegim al fragment
+      $fragment.appendChild(clone);
+    });
+
+    $taula.querySelector("tbody").appendChild($fragment);
+  } catch (error) {
+    let message =
+      error.statusText || "S'ha Produit un error al recuperar les dades";
+    $body.insertAdjacentHTML(
+      "afterend",
+      `<p><mark><b>${error.status}: ${message}</b></mark></p>`
+    );
+  }
+};

@@ -1,0 +1,12 @@
+npm install eslint --save-dev
+
+
+npx eslint --init
+
+
+ESLint: Restart ESLint Server
+
+
+Shift + Alt + F
+
+npx eslint ruta/archivo.js
