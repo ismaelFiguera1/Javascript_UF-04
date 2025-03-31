@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <input
+        type="text"
+        name="nomRepository"
+        placeholder="Nom de repository"
+        required
+      />
+      <input type="hidden" name="id" />
+      <button>Enviar</button>
+    </form>
+
+    <div class="taulaRegistres"></div>
+
+    <template class="repository">
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Privat</th>
+        </tr>
+      </table>
+    </template>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="assets/script.js"></script>
+  </body>
+</html>
