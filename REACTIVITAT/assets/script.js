@@ -41,7 +41,8 @@ d.addEventListener("submit", (e) => {
 //TemplateUI
 
 const template = () => {
-  if (state.todoList.length < 1) return `<p><em>Llista sense tasques</em></p>`;
+  if (template.data.todoList.length < 1)
+    return `<p><em>Llista sense tasques</em></p>`;
   let todos = template.data.todoList.map((item) => `<li>${item}</li>`).join("");
   return todos;
 };
@@ -53,7 +54,9 @@ template.data = {
 
 //Render
 const render = () => {
-  console.log(template.data);
+  console.log("Estat local: ", template.data);
+  console.log("Estat global: ", state);
+
   const $list = d.getElementById("todo-list");
   if (!$list) return;
   $list.innerHTML = template();
