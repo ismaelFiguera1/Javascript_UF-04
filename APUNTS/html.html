@@ -18,14 +18,18 @@
     <main class="container">
       <header>
         <h3>Index</h3>
-        <nav>
-          <ul>
-            <a href="#Temporitzadors">Temporitzadors</a>
-            <a href="#Callback">Callback</a>
-            <a href="#promises">Promises</a>
-            <a href="#asyncAwait">Async-Awayt</a>
-            <a href="#ajax">Ajax</a>
-          </ul>
+        <nav class="navbar bg-body-tertiary">
+          <div class="container-fluid">
+            <a href="#Temporitzadors" class="navbar-brand mb-0 h1">
+              Temporitzadors
+            </a>
+            <a href="#Callback" class="navbar-brand mb-0 h1">Callback</a>
+            <a href="#promises" class="navbar-brand mb-0 h1">Promises</a>
+            <a href="#asyncAwait" class="navbar-brand mb-0 h1">Async-Awayt</a>
+            <a href="#ajax" class="navbar-brand mb-0 h1">Ajax</a>
+            <a href="#APIrest" class="navbar-brand mb-0 h1">Api REST</a>
+            <a href="#links" class="navbar-brand mb-0 h1">Links</a>
+          </div>
         </nav>
       </header>
 
@@ -57,7 +61,9 @@
           <img class="col" src="assets/images/3Captura.PNG" alt="" />
         </div>
       </section>
-      <br /><br /><br />
+      <br />
+      <br />
+      <br />
       <hr />
       <br />
 
@@ -65,8 +71,10 @@
         <div>
           <h2>Callbacks</h2>
           <p>
-            Les <b>Callbacks</b> son funcions que es passen com a arguments a
-            altres funcions i s'executen al fer una accio
+            Les
+            <b>Callbacks</b>
+            son funcions que es passen com a arguments a altres funcions i
+            s'executen al fer una accio
           </p>
         </div>
         <div class="container">
@@ -144,9 +152,10 @@
       <section class="container" id="promises">
         <h2>Promises</h2>
         <p>
-          Les <b>Promises</b> es un objecte que retorna el resultat de una
-          operacio asincrona, retorna resolve si va tot correctament, si falla
-          retorna rejected
+          Les
+          <b>Promises</b>
+          es un objecte que retorna el resultat de una operacio asincrona,
+          retorna resolve si va tot correctament, si falla retorna rejected
         </p>
         <div class="container">
           <div class="row">
@@ -165,10 +174,12 @@
       <section class="container" id="asyncAwait">
         <h2>Async-Awayt</h2>
         <p>
-          Els <b>Async-Awayt</b> es divideixen funcions declarades i funcions
-          expressades, a diferencia dels promises que va encadenant then, fica
-          l'await i espera el resultat, aixi no fica tant codi i es mes facil de
-          manegar error ja que es fa amb un trycatch.
+          Els
+          <b>Async-Awayt</b>
+          es divideixen funcions declarades i funcions expressades, a diferencia
+          dels promises que va encadenant then, fica l'await i espera el
+          resultat, aixi no fica tant codi i es mes facil de manegar error ja
+          que es fa amb un trycatch.
         </p>
         <div class="container">
           <table class="table">
@@ -237,7 +248,9 @@
           <li class="list-group-item">Axios</li>
         </ul>
 
-        <br /><br /><br />
+        <br />
+        <br />
+        <br />
 
         <ol class="list-group list-group-numbered">
           <li class="list-group-item">
@@ -260,9 +273,11 @@
         <br />
         <p>
           Per fer peticions asincrones http es pot fer amb
-          <b>XMLHttpRequest</b>, aunque ajax fa servir coses mes modernes com
-          fetch o axios XMLHttpRequest es la base de les peticions en ajax.
-          <br />Per fer-ho servir es tenen que segur els seguents passos:
+          <b>XMLHttpRequest</b>
+          , aunque ajax fa servir coses mes modernes com fetch o axios
+          XMLHttpRequest es la base de les peticions en ajax.
+          <br />
+          Per fer-ho servir es tenen que segur els seguents passos:
         </p>
         <ol class="list-group list-group-numbered">
           <li class="list-group-item">
@@ -271,35 +286,225 @@
           </li>
           <li class="list-group-item">
             Quan l'hem creat diem que quan canvii l'estat ens executi la funcio:
-            <code> xhr.addEventListener("readystatechange", (e) => {});</code>
+            <code>xhr.addEventListener("readystatechange", (e) => {});</code>
           </li>
           <li class="list-group-item">
             Quan canvia l'estat i son els numeros entre 200 i 300 es quan esta
             en l'estat correcte i llavors amb DOM fem que ens agafin les dades.
             <br />
-            <code> if (xhr.status >= 200 && xhr.status < 300) {}</code>
+            <code>if (xhr.status >= 200 && xhr.status < 300) {}</code>
           </li>
           <li class="list-group-item">
             Ara que ja hem configurat l'enviament li diem que sera un get a una
-            url amb <br />
-            <code> xhr.open("GET", "assets/users.json");</code>
+            url amb
+            <br />
+            <code>xhr.open("GET", "assets/users.json");</code>
           </li>
           <li class="list-group-item">
-            Quan ja esta <b>TOT</b> preparat ho enviem amb
+            Quan ja esta
+            <b>TOT</b>
+            preparat ho enviem amb
             <code>xhr.send();</code>
           </li>
         </ol>
+
+        <div class="container">
+          <h3>Fetch</h3>
+          <p>
+            El fetch es una tecnolojia de Ajax i es mes moderna que el
+            XMLHttpRequest, treballa amb promeses. Ara ensenyem un petit exemple
+            per treure usuaris.
+          </p>
+          <div class="row">
+            <div class="col">
+              <img src="assets/images/15Captura.PNG" class="img-fluid" alt="" />
+            </div>
+            <div class="col">
+              <img src="assets/images/16Captura.PNG" class="img-fluid" alt="" />
+            </div>
+          </div>
+          <h3>Fetch + Async-Awayt</h3>
+          <p>
+            A diferencia de l'exemple anterior que ho feia amb promeses ara amb
+            el await farem que esperi asincronament
+          </p>
+          <div class="row">
+            <div class="col">
+              <img src="assets/images/17Captura.PNG" class="img-fluid" alt="" />
+            </div>
+            <div class="col">
+              <img src="assets/images/16Captura.PNG" class="img-fluid" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <section class="container">
+          <h3>Axios</h3>
+          <p>
+            Es una llibreria basada amb promeses, es molt similar al fetch pero
+            te una sintaxis mes senzilla i ja tradueix automaticament el JSON
+          </p>
+          <div class="row">
+            <div class="col">
+              <img src="assets/images/18Captura.PNG" class="img-fluid" alt="" />
+            </div>
+            <div class="col">
+              <img src="assets/images/16Captura.PNG" class="img-fluid" alt="" />
+            </div>
+          </div>
+          <br />
+          <br />
+          <br />
+          <h3>Axios + Async-Awayt</h3>
+          <p>Ara farem exactament el mateix pero amb async-awayt i axios</p>
+          <div class="row">
+            <div class="col">
+              <img src="assets/images/19Captura.PNG" class="img-fluid" alt="" />
+            </div>
+            <div class="col">
+              <img src="assets/images/16Captura.PNG" class="img-fluid" alt="" />
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section class="container" id="APIrest">
+        <h2>API REST</h2>
+        <p>
+          A diferencia de l'api normal que sol permet fer GET l'api rest permet
+          fer un CRUD complet en una api
+        </p>
+        <br />
+        <br />
+        <table class="table table-dark table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Metode</th>
+              <th scope="col">Accio</th>
+              <th scope="col">URL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>GET</td>
+              <td>El get llegeix les dades</td>
+              <td>/usuaris → obtenir la llista d’usuaris</td>
+            </tr>
+            <tr>
+              <td>POST</td>
+              <td>El post crea registres i fa l'alta a l'api</td>
+              <td>/usuaris → afegir un nou usuari</td>
+            </tr>
+            <tr>
+              <td>PUT</td>
+              <td>El put modifica els registres de l'api</td>
+              <td>/usuaris/1 → modificar tot l’usuari 1 (el registre)</td>
+            </tr>
+            <tr>
+              <td>DELETE</td>
+              <td>El delete esborra els registres de l'api</td>
+              <td>/usuaris/1 → eliminar l’usuari 1</td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+        <br />
+        <br />
+        <hr />
+        <h2>API REST JSON Server - API falsa local</h2>
+        <p>
+          Es una llibreria de Node.js que per funcionar necessita correr sobre
+          node js, crea una api rest sobre un fitxer json
+        </p>
+
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <img src="assets/images/20Captura.PNG" class="img-fluid" alt="" />
+            </div>
+            <div class="col">
+              <code>
+                { "monedes": [ { "poblacio": "Agramunt", "epoca": "modernaa",
+                "id": "4" }, { "id": "5", "poblacio": "Balaguer-Almatà",
+                "epoca": "baix medieval" }, { "id": "dbfb", "poblacio":
+                "Lleida", "epoca": "medieval" }, { "id": "7575", "poblacio":
+                "Balaguer", "epoca": "medieval" }, { "id": "0487", "poblacio":
+                "test", "epoca": "moderna" } ], "medalles": [ { "id": "1",
+                "motiu": "Montserrat", "forma": "ovalada" }, { "id": "2",
+                "motiu": "Sant Magí", "forma": "quadrada" }, { "id": "3",
+                "motiu": "Sant Llorenç", "forma": "rodona" } ] }
+              </code>
+            </div>
+            <div class="col">
+              <img src="assets/images/21Captura.PNG" class="img-fluid" alt="" />
+            </div>
+          </div>
+        </div>
+        <br />
+        <p>
+          Ara ja tenim preparada una api rest en una url, sol es questio de fer
+          el codi per fer un crud
+        </p>
+        <br />
+        <br />
+        <hr />
+        <div class="container">
+          <div class="row">
+            <div class="col"><h2>CRUD AJAX</h2></div>
+            <div class="col">
+              <a
+                href="EXERCICIS/index.html"
+                class="btn btn-primary"
+                role="button"
+              >
+                CRUD AJAX
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <br /><br />
+      <hr />
+      <section class="container" id="links">
+        <h3>Links</h3>
+
+        <div class="row">
+          <div class="col"><h2>UF3</h2></div>
+          <div class="col">
+            <a
+              href="ApuntsUF3/apunts.html"
+              class="btn btn-primary"
+              role="button"
+            >
+              UF 3
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col"><h2>UF2</h2></div>
+          <div class="col">
+            <a href="#markdown" class="btn btn-primary" role="button"> UF 2 </a>
+          </div>
+        </div>
       </section>
     </main>
-    <br /><br /><br /><br /><br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
     <footer class="container">
       <h3>Footer</h3>
-      <br /><br /><br />
+      <br />
+      <br />
+      <br />
       <div id="markdown"></div>
     </footer>
     <script src="assets/bootstrap-5.3.5-dist/js/bootstrap.bundle.js"></script>
     <script src="assets/marked.min.js"></script>
     <script src="assets/script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="assets/scriptExemples.js"></script>
   </body>
 </html>

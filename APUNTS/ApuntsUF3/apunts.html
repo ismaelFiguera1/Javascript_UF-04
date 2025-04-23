@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/apunts.css" />
+  </head>
+  <body>
+    <h1>
+      Apunts UF-3 de <b><i>JAVASCRIPT</i></b>
+    </h1>
+
+    <section class="tema">
+      <span style="color: transparent">a</span>
+      <h2>Seleccionar elements DOM</h2>
+      <p>Hi ha la manera antiga i la nova: <br />La antiga:</p>
+      <ul>
+        <li>Per <b>tag</b>: document.getElementsByTagName("li")</li>
+        <li>Per <b>classe</b>: document.getElementsByClassName("card")</li>
+        <li>Per <b>atribut name</b>: document.getElementsByName("nom")</li>
+        <li>Per <b>id</b>: document.getElementById("menu")</li>
+      </ul>
+
+      <p>La nova:</p>
+      <ul>
+        <li>
+          document.querySelector(".cards"): Aquest agafa el <b>1r</b> element
+          que tingui la classe cards
+        </li>
+        <li>
+          document.querySelectorAll("a"): Aquest agafa <b>TOTS</b> els elements
+          que tinguin el tag "a"
+        </li>
+      </ul>
+      <span style="color: transparent">a</span>
+    </section>
+
+    <section class="tema">
+      <span style="color: transparent">a</span>
+      <h2>Recorrer Nodes</h2>
+
+      <p>
+        Ara recorrerem els nodes, els nodes son els elements que hem seleccionat
+        del DOM <br />Exemples:
+      </p>
+
+      <ul>
+        <li>
+          console.log(document.querySelectorAll("h2").forEach((ele)=>{
+          console.log(ele);}));
+        </li>
+        <li>
+          console.log(document.querySelectorAll(".tema").forEach((ele)=>{
+          console.log(ele);}));
+        </li>
+        <li>
+          console.log(document.querySelectorAll("li").forEach((ele)=>{
+          console.log(ele);}));
+        </li>
+      </ul>
+
+      <p>Aquestos son els resultats:</p>
+      <br /><br /><br />
+
+      <div class="imatges">
+        <img src="imatges/Captura.PNG" alt="" /><img
+          src="imatges/Captura1.PNG"
+          alt=""
+        /><img src="imatges/Captura3.PNG" alt="" />
+      </div>
+
+      <span style="color: transparent">a</span>
+    </section>
+
+    <section class="tema">
+      <span style="color: transparent">a</span>
+      <h2>Data attributes</h2>
+
+      <p>Aixo es un exemple:</p>
+      <div class="imatges">
+        <img src="imatges/Captura2.PNG" alt="" />
+        <img src="imatges/Captura4.PNG" alt="" />
+      </div>
+
+      <p>
+        Retorna el mateix, pero a la linea 1 busca directament el lang, i a la 2
+        ho busca per <b>atribute</b>
+      </p>
+
+      <p>Pero tambe es poden modificar:</p>
+
+      <ul>
+        <li>document.documentElement.lang = "es";</li>
+        <li>document.documentElement.setAttribute("lang", "eng");</li>
+      </ul>
+
+      <p>
+        El primer agafa l'atribut directament i el segon ho fa amb el
+        <b>setAttribute()</b>
+      </p>
+
+      <span style="color: transparent">a</span>
+    </section>
+
+    <section class="tema exempleRecorrerDOM">
+      <span style="color: transparent">a</span>
+      <h2>CSS</h2>
+
+      <p>Aqui recuperarem l'estis de una etiqueta</p>
+
+      <span style="color: green; font-style: oblique; font-size: larger" id="ex"
+        >EXEMPLE</span
+      >
+
+      <div class="imatges">
+        <img src="imatges/Captura5.PNG" alt="" />
+        <img src="imatges/Captura6.PNG" alt="" />
+      </div>
+
+      <p>Ara recuperare una variable que esta al css:</p>
+
+      <div class="imatges">
+        <img src="imatges/Captura7.PNG" alt="" />
+        <img src="imatges/Captura8.PNG" alt="" />
+      </div>
+
+      <span style="color: transparent">a</span>
+    </section>
+
+    <section class="tema">
+      <span style="color: transparent">a</span>
+      <h2>Classes</h2>
+
+      <p>Ara recuperarem la classe de un tag:</p>
+
+      <div class="imatges imatges1">
+        <img src="imatges/Captura9.PNG" alt="" />
+      </div>
+
+      <p>
+        Ara farem servir el <b>toogle</b>, funciona de la manera seguent, si no
+        hi ha la classe que diu al codi, la crea, si hi es la elimina.
+      </p>
+
+      <div class="imatges imatges1">
+        <img src="imatges/Captura10.PNG" alt="" />
+      </div>
+
+      <p>
+        Les calsses tambes es poden <b>afegir</b>, <b>reemplaçar</b> o
+        <b>eliminar</b>.
+      </p>
+
+      <div class="imatges imatges2">
+        <img src="imatges/Captura11.PNG" alt="" />
+      </div>
+
+      <span style="color: transparent">a</span>
+    </section>
+
+    <section class="tema">
+      <span style="color: transparent">a</span>
+      <h2>Manipular text i HTML</h2>
+
+      <p>
+        Ara ficare un text de exemple que vaig manipulant i ensenyem els
+        resultats
+      </p>
+
+      <p class="textExemple">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate
+        quasi aliquam corporis voluptatibus! Praesentium molestias voluptates
+        itaque eum? Quaerat voluptatem rem omnis eligendi temporibus labore
+        voluptatum, enim eius doloremque voluptate!
+      </p>
+
+      <div class="imatges imatges1">
+        <img src="imatges/Captura12.PNG" alt="" />
+        <img src="imatges/Captura13.PNG" alt="" />
+      </div>
+
+      <div class="imatges imatges1">
+        <img src="imatges/Captura14.PNG" alt="" />
+        <img src="imatges/Captura15.PNG" alt="" />
+      </div>
+
+      <p>
+        Tambe hi ha el outerHTML, que a diferencia del inner, ho canvia tot
+        inclos les mateixes etiquetes.
+      </p>
+
+      <div class="imatges imatges1">
+        <img src="imatges/Captura16.PNG" alt="" />
+        <img src="imatges/Captura17.PNG" alt="" />
+      </div>
+
+      <span style="color: transparent">a</span>
+    </section>
+
+    <section class="tema">
+      <span style="color: transparent">a</span>
+      <h2>Recorrent el DOM</h2>
+
+      <p>
+        Ara recorrerem el <b>DOM</b>, ho farem amb cildren que ho tracta com
+        array.
+      </p>
+
+      <div class="imatges imatges1">
+        <img src="imatges/Captura18.PNG" alt="" />
+        <img src="imatges/Captura19.PNG" alt="" />
+      </div>
+
+      <ul>
+        <li>
+          El <b>parentElement</b>, agafa l'element pare del tag seleccionat
+        </li>
+        <li>El <b>firstElementChild</b>, agafa el primer fill</li>
+        <li>El <b>lastElementChild</b>, agafa el primer fill</li>
+        <li>
+          Tant <b>firstChild</b> com <b>childNodes</b> ho retornen en format
+          nodes
+        </li>
+      </ul>
+
+      <span style="color: transparent">a</span>
+    </section>
+
+    <section class="tema fragment">
+      <span style="color: transparent">a</span>
+      <h2>Creant elements i fragments</h2>
+
+      <div class="figura"><img src="imatges/Captura20.PNG" alt="" /></div>
+
+      <p>
+        La forma anterior es la correcta, pero costa massa. <br />I la seguent
+        es mes facil i mes repida
+      </p>
+
+      <div class="figura1"><img src="imatges/Captura21.PNG" alt="" /></div>
+
+      <p>Hara insertarem moltes coses a la vegada: <br /></p>
+
+      <div class="insertar">
+        <img src="imatges/Captura22.PNG" alt="" />
+        <img src="imatges/Captura23.PNG" alt="" />
+      </div>
+
+      <p>
+        Ara farem els <b>fragments</b> que a diferenca dels altres no formen
+        part del DOM
+      </p>
+
+      <div class="imatges1">
+        <img src="imatges/Captura24.PNG" alt="" /><img
+          src="imatges/Captura25.PNG"
+          alt=""
+        />
+      </div>
+
+      <p>
+        El createElement crea l'element literal, mentre que el fragment crea un
+        contenedor temporal on s'inserten els elements, cuan s'inserta el
+        fragment, el fragment s'elimina i queda lo de dintre. <br />Pero
+        aquestes son les versions antigues la llista seguent son les noves:
+        <br />
+      </p>
+
+      <ul>
+        <li>
+          <b>insertAdjacentElement(posicio, element)</b> substitueix a
+          <b>(appendChild)</b>
+        </li>
+        <li>
+          <b>insertAdjacentHTML(posicio, element)</b> substitueix a
+          <b>(innerHTML)</b>
+        </li>
+        <li>
+          <b>insertAdjacentText(posicio, text)</b> substitueix a
+          <b>(textContent)</b>
+        </li>
+      </ul>
+
+      <p>
+        Les <b><i>posicions</i></b> poden ser:
+      </p>
+      <ul>
+        <li>beforebegin(germa anterio)</li>
+        <li>afterbegin(primer fill)</li>
+        <li>beforeend(darrer fill)</li>
+        <li>aftered(germa seguent)</li>
+      </ul>
+
+      <span style="color: transparent">a</span>
+    </section>
+
+    <section class="tema">
+      <span style="color: transparent">a</span>
+      <h2>Events del DOM</h2>
+
+      <button id="Activar">Funcio 1 sol clic</button>
+      <br />
+      <br />
+      <div>
+        <img src="imatges/Captura26.PNG" alt="" /><img
+          src="imatges/Captura27.PNG"
+          alt=""
+        />
+      </div>
+      <br /><br /><br />
+      <div>
+        <img src="imatges/Captura28.PNG" alt="" /><img
+          src="imatges/Captura29.PNG"
+          alt=""
+        />
+      </div>
+      <br /><br /><br />
+      <div>
+        <img src="imatges/Captura30.PNG" alt="" />
+        <img src="imatges/Captura31.PNG" alt="" />
+        <img src="imatges/Captura32.PNG" alt="" />
+      </div>
+      <br /><br /><br />
+
+      <div>
+        <img src="imatges/Captura33.PNG" alt="" /><img
+          src="imatges/Captura34.PNG"
+          alt=""
+        />
+      </div>
+      <br />
+      <p>
+        En aquest cas no fara el dblclick perque sol agafa el click quie es el
+        primer
+      </p>
+      <br /><br />
+      <button id="deshabilitar">Eliminar event</button>
+      <br /><br />
+      <div>
+        <img src="imatges/Captura35.PNG" alt="" />
+      </div>
+      <br />
+      <p>
+        Aquesta seria una manera de arreglar-ho, fer un segon boto que elimini
+        l'event click de l'altre i aixi sol quedi el <b>dblclick</b>
+      </p>
+      <br /><br />
+      <h3>Flux i metode bombolla</h3>
+      <section class="exercici">
+        <div>
+          <a href="">a</a>
+          <div>
+            <a href="">b</a>
+            <div><a href="">c</a></div>
+          </div>
+        </div>
+      </section>
+
+      <div>
+        <img src="imatges/Captura36.PNG" alt="" />
+        <img src="imatges/Captura37.PNG" alt="" />
+      </div>
+      <p>
+        Li fiquem un event al section i com que te coses dins, sempre que es
+        clici a dintre, s'activa l'event, i despres endevinem desde on s'ha
+        clicat
+      </p>
+
+      <br /><br />
+      <p>
+        Despres dels events <b>click</b>, <b>dblclick</b> hi ha el
+        <b>DOMComtentLoaded</b> que significa que l'event s'activa quan es
+        carrega el DOM. <br />A part del <b>document</b> hi ha el
+        <b>window</b> que es la finestra i <b>navigator</b>.
+      </p>
+
+      <span style="color: transparent">a</span>
+    </section>
+
+    <script src="js/apunts.js"></script>
+  </body>
+</html>

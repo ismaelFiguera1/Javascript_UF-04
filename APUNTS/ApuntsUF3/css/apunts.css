@@ -1,0 +1,45 @@
+:root{
+  --color-fons: grey;
+}
+
+
+
+*,
+::before,
+::after{
+  box-sizing: border-box;
+}
+
+h1,h2{
+  text-decoration: underline;
+}
+
+.tema{
+  margin:2%;
+  padding: 1%;
+  background-color: rgba(0, 255, 255, 0.15);
+}
+
+.imatges{
+  width: 100%;
+}
+
+.imatges > *{
+  width: 33.33%;
+  padding: 1%;
+}
+
+.imatges1 > *{
+  width: 49%;
+  padding: 1%;
+}
+
+.imatges2 > *{
+  width: 75%;
+  padding: 1%;
+}
+
+.exercici * {
+  border: 1px solid black;
+  margin: 2%;
+}

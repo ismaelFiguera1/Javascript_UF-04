@@ -1,0 +1,67 @@
+{
+  "MarquesCotxes": [
+    {
+      "marca": "Ford",
+      "madeIn": "EEUUdd",
+      "id": "5"
+    },
+    {
+      "marca": "Renau",
+      "madeIn": "France",
+      "id": "6"
+    },
+    {
+      "id": "ae14",
+      "marca": "fffff",
+      "madeIn": "fffffffff"
+    },
+    {
+      "id": "b3ae",
+      "marca": "Volkswagen",
+      "madeIn": "Germany"
+    }
+  ],
+  "Ciutats": [
+    {
+      "id": "1",
+      "nom": "Barcelona",
+      "habitants": 35060
+    },
+    {
+      "id": "2",
+      "nom": "Madrid",
+      "habitants": 40000
+    },
+    {
+      "id": "3",
+      "nom": "Burgos",
+      "habitants": 20563
+    },
+    {
+      "id": "5",
+      "nom": "Rome",
+      "habitants": 65000
+    },
+    {
+      "id": "4",
+      "nom": "Paris",
+      "habitants": 50000
+    },
+    {
+      "id": "MJI8Lae"
+    },
+    {
+      "id": "x8UR6J6"
+    },
+    {
+      "id": "fadc",
+      "nom": "sfgs",
+      "habitants": "gsdfg"
+    },
+    {
+      "id": "5545",
+      "nom": "bmw",
+      "habitants": "gwermany"
+    }
+  ]
+}

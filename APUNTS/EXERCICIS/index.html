@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <h1>CRUD API REST</h1>
+    <section class="crud">
+      <article>
+        <h2 class="crud-title">Alta Marca cotxes</h2>
+        <form class="crud-form">
+          <input type="text" name="marca" placeholder="marca cotxe" required />
+          <br />
+          <input type="text" name="madeIn" placeholder="pais origen" required />
+          <br />
+          <input type="submit" value="Enviar" class="submit" />
+          <!-- Quan enviem les dades, enviarem l'accio a fer oculta -->
+          <input type="hidden" name="ide" class="ide" />
+          <article>
+            <h2>Veurer Marques</h2>
+            <table class="crud-table">
+              <thead>
+                <tr>
+                  <th>Marca</th>
+                  <th>MadeIn</th>
+                  <th>Accions</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </article>
+        </form>
+      </article>
+    </section>
+    <template class="crud-template">
+      <tr>
+        <td class="marca">Volkswagen</td>
+        <td class="pais">Germany</td>
+        <td>
+          <button type="button" class="edit">editar</button>
+          <button type="button" class="delete">esborrar</button>
+        </td>
+      </tr>
+    </template>
+    <script src="assets/crud-ajax.js"></script>
+  </body>
+</html>

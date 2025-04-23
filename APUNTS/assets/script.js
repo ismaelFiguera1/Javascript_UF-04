@@ -1,7 +1,7 @@
 const d = document,
   $divMarkdown = d.querySelector("#markdown");
 
-fetch("markdown.md")
+fetch("ApuntsUF2/a001.md")
   .then((resposta) => resposta.text())
   .then((text) => {
     $divMarkdown.innerHTML = marked.parse(text);
