@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.css"
       rel="stylesheet"
-      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
-      crossorigin="anonymous"
+      href="assets/bootstrap-5.3.5-dist/css/bootstrap.css"
     />
     <link rel="stylesheet" href="assets/style.css" />
   </head>
@@ -17,110 +15,291 @@
       <h1>Apunts Javascript UF4</h1>
     </header>
 
-
-
-
-
-
-
-
-
     <main class="container">
-
-
-
       <header>
         <h3>Index</h3>
         <nav>
           <ul>
             <a href="#Temporitzadors">Temporitzadors</a>
             <a href="#Callback">Callback</a>
-            <a href="#seccio3">sdfdfdfdf</a>
+            <a href="#promises">Promises</a>
+            <a href="#asyncAwait">Async-Awayt</a>
+            <a href="#ajax">Ajax</a>
           </ul>
         </nav>
       </header>
 
+      <section class="container" id="Temporitzadors">
+        <div>
+          <h2>Temporitzadors</h2>
+          <p>
+            <b>Timeout</b>
+            : Executa una funcio 1 sol cop despres del temps especificat.
+            <br />
+            <b>Interval</b>
+            : Executa REPETIDAMENT una funcio despres del temps especificat.
+            <br />
+            En
+            <b>clearTimeout()</b>
+            i el
+            <b>clearInterval()</b>
+            permeten posar fi als temporitzadors, pero per pararlos es te que
+            haver ficat el temporitzador en una variable
+          </p>
+        </div>
+        <div class="row">
+          <img class="col" src="assets/images/Captura.PNG" alt="" />
+          <img class="col" src="assets/images/1Captura.PNG" alt="" />
+        </div>
+        <br />
+        <div class="row">
+          <img class="col" src="assets/images/2Captura.PNG" alt="" />
+          <img class="col" src="assets/images/3Captura.PNG" alt="" />
+        </div>
+      </section>
+      <br /><br /><br />
+      <hr />
+      <br />
 
-      
-      <div>
-        <section class="" id="Temporitzadors">
-          <div>
-            <h2>Temporitzadors</h2>
-            <p>
-              <b>Timeout</b>
-              : Executa una funcio 1 sol cop despres del temps especificat.
-              <br />
-              <b>Interval</b>
-              : Executa REPETIDAMENT una funcio despres del temps especificat.
-              <br />
-              En
-              <b>clearTimeout()</b>
-              i el
-              <b>clearInterval()</b>
-              permeten posar fi als temporitzadors, pero per pararlos es te que
-              haver ficat el temporitzador en una variable
-            </p>
-          </div>
+      <section class="container" id="Callback">
+        <div>
+          <h2>Callbacks</h2>
+          <p>
+            Les <b>Callbacks</b> son funcions que es passen com a arguments a
+            altres funcions i s'executen al fer una accio
+          </p>
+        </div>
+        <div class="container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Codi</th>
+                <th scope="col">Resultat</th>
+                <th scope="col">Descripcio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>
+                  <img
+                    src="assets/images/4Captura.PNG"
+                    class="img-fluid"
+                    alt=""
+                  />
+                </td>
+                <td>
+                  <img src="assets/images/5Captura.PNG" alt="img-fluid" />
+                </td>
+                <td>
+                  En aquest cas a la funcio usuari li passem la funcio saludar
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>
+                  <img
+                    src="assets/images/6Captura.PNG"
+                    class="img-fluid"
+                    alt=""
+                  />
+                </td>
+                <td>
+                  <img
+                    src="assets/images/7Captura.PNG"
+                    class="img-fluid"
+                    alt=""
+                  />
+                </td>
+                <td>Aqui fem callbacks anidades</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>
+                  <img
+                    src="assets/images/8Captura.PNG"
+                    class="img-fluid"
+                    alt=""
+                  />
+                </td>
+                <td>
+                  <img
+                    src="assets/images/9Captura.PNG"
+                    class="img-fluid"
+                    alt=""
+                  />
+                </td>
+                <td>
+                  El problema de fer aixo es que produeix callbacks infernals
+                  que es quan n'hi ha moltes, per arreglar aixo hi ha les
+                  promises
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="container" id="promises">
+        <h2>Promises</h2>
+        <p>
+          Les <b>Promises</b> es un objecte que retorna el resultat de una
+          operacio asincrona, retorna resolve si va tot correctament, si falla
+          retorna rejected
+        </p>
+        <div class="container">
           <div class="row">
-            <img class="col" src="assets/images/Captura.PNG" alt="" />
-            <img class="col" src="assets/images/1Captura.PNG" alt="" />
+            <div class="col">
+              <img src="assets/images/10Captura.PNG" class="img-fluid" alt="" />
+            </div>
+            <div class="col">
+              <img src="assets/images/11Captura.PNG" class="img-fluid" alt="" />
+            </div>
+            <div class="col">
+              <img src="assets/images/12Captura.PNG" alt="" />
+            </div>
           </div>
-          <div>
-            <img src="assets/images/2Captura.PNG" alt="" />
-            <img src="assets/images/3Captura.PNG" alt="" />
-          </div>
-        </section>
+        </div>
+      </section>
+      <section class="container" id="asyncAwait">
+        <h2>Async-Awayt</h2>
+        <p>
+          Els <b>Async-Awayt</b> es divideixen funcions declarades i funcions
+          expressades, a diferencia dels promises que va encadenant then, fica
+          l'await i espera el resultat, aixi no fica tant codi i es mes facil de
+          manegar error ja que es fa amb un trycatch.
+        </p>
+        <div class="container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Tipus</th>
+                <th scope="col">Promesa</th>
+                <th scope="col">Execucio</th>
+                <th scope="col">Resultat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Declarada</th>
+                <td>
+                  <img
+                    src="assets/images/10Captura.PNG"
+                    class="img-fluid"
+                    alt=""
+                  />
+                </td>
+                <td>
+                  <img
+                    src="assets/images/13Captura.PNG"
+                    class="img-fluid"
+                    alt=""
+                  />
+                </td>
+                <td>Es fa com uns funcio normal</td>
+              </tr>
+              <tr>
+                <th scope="row">Expressada</th>
+                <td>
+                  <img
+                    src="assets/images/10Captura.PNG"
+                    class="img-fluid"
+                    alt=""
+                  />
+                </td>
+                <td>
+                  <img
+                    src="assets/images/14Captura.PNG"
+                    class="img-fluid"
+                    alt=""
+                  />
+                </td>
+                <td>
+                  Es fa com un arrowFunction en la que la variable es la mateixa
+                  funcio
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="container" id="ajax">
+        <h2>Ajax</h2>
+        <p>
+          Utilitza l'objecte XMLHttpRequest per a comunicar-se asincronament amb
+          els servidors. Pot enviar i rebre informacio amb JSON, XML, HTML i
+          text. Permet intercanviar dades amb el servidor sense recarregar la
+          pagina. Inclus pot fer servir llibreries externes com:
+        </p>
+        <ul class="list-group">
+          <li class="list-group-item">JQuery.ajax()</li>
+          <li class="list-group-item">Axios</li>
+        </ul>
 
+        <br /><br /><br />
 
+        <ol class="list-group list-group-numbered">
+          <li class="list-group-item">
+            HTML i CSS, per crear una presentacio basada en estandards
+          </li>
+          <li class="list-group-item">
+            DOM, per la interaccio i manipulacio dinamica de la presentacio
+          </li>
+          <li class="list-group-item">
+            HTML, XML i JSON, per a l'intercanvi i manipulacio de l'informacio
+          </li>
+          <li class="list-group-item">
+            XMLHttpRequest o Fetch, per a l'intercanvi assincron de l'informacio
+          </li>
+          <li class="list-group-item">
+            JAVASCRIPT per unir la resta de tecnologies programaticament
+          </li>
+        </ol>
 
-
-
-
-        <section class="" id="Callback">
-          <div>
-            <h2>Callbacks</h2>
-            <p></p>
-          </div>
-          <div>
-            <img src="assets/images/Captura.PNG" alt="" />
-            <img src="assets/images/1Captura.PNG" alt="" />
-          </div>
-          <div>
-            <img src="assets/images/2Captura.PNG" alt="" />
-            <img src="assets/images/3Captura.PNG" alt="" />
-          </div>
-        </section>
-
-
-
-
-
-        
-      </div>
+        <br />
+        <p>
+          Per fer peticions asincrones http es pot fer amb
+          <b>XMLHttpRequest</b>, aunque ajax fa servir coses mes modernes com
+          fetch o axios XMLHttpRequest es la base de les peticions en ajax.
+          <br />Per fer-ho servir es tenen que segur els seguents passos:
+        </p>
+        <ol class="list-group list-group-numbered">
+          <li class="list-group-item">
+            Crear objecte XMLHttpRequest fent:
+            <code>const xhr = new XMLHttpRequest();</code>
+          </li>
+          <li class="list-group-item">
+            Quan l'hem creat diem que quan canvii l'estat ens executi la funcio:
+            <code> xhr.addEventListener("readystatechange", (e) => {});</code>
+          </li>
+          <li class="list-group-item">
+            Quan canvia l'estat i son els numeros entre 200 i 300 es quan esta
+            en l'estat correcte i llavors amb DOM fem que ens agafin les dades.
+            <br />
+            <code> if (xhr.status >= 200 && xhr.status < 300) {}</code>
+          </li>
+          <li class="list-group-item">
+            Ara que ja hem configurat l'enviament li diem que sera un get a una
+            url amb <br />
+            <code> xhr.open("GET", "assets/users.json");</code>
+          </li>
+          <li class="list-group-item">
+            Quan ja esta <b>TOT</b> preparat ho enviem amb
+            <code>xhr.send();</code>
+          </li>
+        </ol>
+      </section>
     </main>
-
-
-
-
-
-
-
-
-
-
-
-
+    <br /><br /><br /><br /><br />
     <footer class="container">
       <h3>Footer</h3>
       <br /><br /><br />
       <div id="markdown"></div>
     </footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.js"
-      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-      crossorigin="anonymous"
-    ></script>
+    <script src="assets/bootstrap-5.3.5-dist/js/bootstrap.bundle.js"></script>
     <script src="assets/marked.min.js"></script>
     <script src="assets/script.js"></script>
+    <script src="assets/scriptExemples.js"></script>
   </body>
 </html>

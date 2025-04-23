@@ -1,12 +1,9 @@
 html {
-  font-family: sans-serif;
   box-sizing: border-box;
-  height: 100vh;
 }
 
 *,
 ::after,
 ::before {
-  font-family: inherit;
   box-sizing: inherit;
 }
